@@ -8,58 +8,67 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Granite-inspired earth tones with warm sophistication */
-    --background: 30 15% 97%;
-    --foreground: 210 15% 15%;
+    /* Modern minimalist palette with bold accents */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 15% 15%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 15%;
+    --popover-foreground: 240 10% 3.9%;
 
-    /* Deep slate for premium brand feel */
-    --primary: 210 20% 25%;
-    --primary-foreground: 30 15% 97%;
+    /* Deep charcoal for modern contrast */
+    --primary: 240 6% 10%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Warm earth secondary */
-    --secondary: 25 35% 88%;
-    --secondary-foreground: 210 20% 25%;
+    /* Soft neutral secondary */
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 6% 10%;
 
-    /* Muted backgrounds */
-    --muted: 30 20% 94%;
-    --muted-foreground: 210 10% 45%;
+    /* Subtle muted tones */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
 
-    /* Copper accent for premium touch */
-    --accent: 20 60% 45%;
-    --accent-foreground: 30 15% 97%;
+    /* Vibrant accent - electric blue */
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 30 15% 97%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 30 15% 88%;
-    --input: 30 15% 88%;
-    --ring: 20 60% 45%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 210 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
     
-    /* Custom design tokens */
-    --granite-dark: 210 20% 25%;
-    --granite-medium: 210 15% 35%;
-    --granite-light: 30 20% 90%;
-    --earth-warm: 25 45% 55%;
-    --copper: 20 60% 45%;
+    /* Modern design tokens */
+    --charcoal: 240 6% 10%;
+    --charcoal-light: 240 5% 20%;
+    --neutral-100: 240 5% 96%;
+    --neutral-200: 240 6% 90%;
+    --electric-blue: 210 100% 50%;
+    --electric-blue-dark: 210 100% 40%;
+    --amber-accent: 38 92% 50%;
     
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 20% 25%) 0%, hsl(210 15% 35%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(20 60% 45%) 0%, hsl(25 45% 55%) 100%);
+    /* Modern gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(240 6% 10%) 0%, hsl(240 5% 20%) 50%, hsl(210 100% 50% / 0.1) 100%);
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(210 100% 50% / 0.2) 0px, transparent 50%),
+                     radial-gradient(at 80% 0%, hsl(38 92% 50% / 0.15) 0px, transparent 50%),
+                     radial-gradient(at 0% 50%, hsl(210 100% 50% / 0.1) 0px, transparent 50%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(210 100% 40%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsla(0, 0%, 100%, 0.1) 0%, hsla(0, 0%, 100%, 0.05) 100%);
     
-    /* Shadows */
-    --shadow-elegant: 0 10px 40px -10px hsl(210 20% 25% / 0.15);
-    --shadow-strong: 0 20px 60px -15px hsl(210 20% 25% / 0.25);
+    /* Modern shadows with layering */
+    --shadow-elegant: 0 1px 3px hsl(240 6% 10% / 0.1), 0 10px 40px -10px hsl(240 6% 10% / 0.15);
+    --shadow-strong: 0 4px 6px hsl(240 6% 10% / 0.05), 0 20px 60px -15px hsl(240 6% 10% / 0.3);
+    --shadow-glow: 0 0 40px hsl(210 100% 50% / 0.3);
+    --shadow-neon: 0 0 20px hsl(210 100% 50% / 0.5), 0 0 40px hsl(210 100% 50% / 0.2);
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 

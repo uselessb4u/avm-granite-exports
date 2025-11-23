@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
@@ -7,7 +8,8 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <main className="font-inter">
+    <main className="font-sans">
+      <Navbar />
       <Hero />
       <About />
       <Gallery />
