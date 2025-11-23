@@ -40,8 +40,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "info@avmexports.com",
-      link: "mailto:info@avmexports.com",
+      value: "avmexports1@gmail.com",
+      link: "mailto:avmexports1@gmail.com",
     },
     {
       icon: Phone,

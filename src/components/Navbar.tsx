@@ -39,7 +39,9 @@ const Navbar = () => {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-display font-bold text-2xl text-foreground hover:text-electric-blue transition-colors"
+            className={`font-display font-bold text-2xl transition-colors ${
+              isScrolled ? "text-foreground" : "text-white"
+            } hover:text-electric-blue`}
           >
             AVM <span className="text-electric-blue">EXPORTS</span>
           </button>
@@ -50,7 +52,9 @@ const Navbar = () => {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                className={`text-sm font-medium transition-colors relative group ${
+                  isScrolled ? "text-muted-foreground hover:text-foreground" : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-electric-blue group-hover:w-full transition-all duration-300"></span>
@@ -67,7 +71,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-foreground"
+            className={`md:hidden ${isScrolled ? "text-foreground" : "text-white"}`}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

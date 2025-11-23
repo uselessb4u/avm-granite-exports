@@ -1,17 +1,31 @@
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X, ZoomIn } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+import Granite1 from "@/assets/photos/Granite1.jpg";
+import Granite2 from "@/assets/photos/Granite2.jpg";
+import Granite3 from "@/assets/photos/Granite3.jpg";
+import Granite4 from "@/assets/photos/Granite4.jpg";
+import Granite5 from "@/assets/photos/Granite5.jpg";
+import Granite6 from "@/assets/photos/Granite6.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const images = [
-    { id: 1, title: "Premium Black Granite", category: "Black Granite", span: "lg:col-span-2 lg:row-span-2" },
-    { id: 2, title: "Red Granite Block", category: "Red Granite", span: "lg:col-span-1" },
-    { id: 3, title: "White Granite", category: "White Granite", span: "lg:col-span-1" },
-    { id: 4, title: "Grey Granite", category: "Grey Granite", span: "lg:col-span-1" },
-    { id: 5, title: "Multi-Color", category: "Multi-Color", span: "lg:col-span-1" },
-    { id: 6, title: "Export Quality", category: "Premium Grade", span: "lg:col-span-2" },
+    { id: 1, title: "Granite", category: "Black Granite", src: Granite1 },
+    { id: 2, title: "Granite", category: "Red Granite", src: Granite2 },
+    { id: 3, title: "Granite", category: "White Granite", src: Granite3 },
+    { id: 4, title: "Granite", category: "Grey Granite", src: Granite4 },
+    { id: 5, title: "Granite", category: "Multi-Color", src: Granite5 },
+    { id: 6, title: "Granite", category: "Premium Grade", src: Granite6 },
   ];
 
   return (
@@ -34,42 +48,54 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Bento Grid Gallery */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
-          {images.map((image, index) => (
-            <div
-              key={image.id}
-              className={`group relative rounded-3xl overflow-hidden cursor-pointer bg-card border border-border hover:border-amber/50 transition-all duration-500 hover:shadow-strong animate-scale-in ${image.span}`}
-              style={{ 
-                animationDelay: `${index * 100}ms`,
-                aspectRatio: image.span.includes('span-2') ? '16/9' : '1/1'
-              }}
-              onClick={() => setSelectedImage(`https://images.unsplash.com/photo-1615529328331-f8917597711f?w=1200&q=80&auto=format&fit=crop&id=${image.id}`)}
-            >
-              <img
-                src={`https://images.unsplash.com/photo-1615529328331-f8917597711f?w=800&q=80&auto=format&fit=crop&id=${image.id}`}
-                alt={image.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-              
-              {/* Content */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-end text-primary-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                <span className="text-xs font-medium text-amber mb-2">{image.category}</span>
-                <h3 className="font-display font-semibold text-xl md:text-2xl mb-2">
-                  {image.title}
-                </h3>
-                <div className="w-12 h-1 bg-electric-blue"></div>
-              </div>
+        {/* Carousel Gallery */}
+        <div className="max-w-7xl mx-auto px-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={image.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
+                  <div
+                    className="group relative rounded-3xl overflow-hidden cursor-pointer bg-card border border-border hover:border-amber/50 transition-all duration-500 hover:shadow-strong animate-scale-in aspect-[4/5]"
+                    style={{
+                      animationDelay: `${index * 100}ms`,
+                    }}
+                    onClick={() => setSelectedImage(image.src)}
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
 
-              {/* Zoom icon */}
-              <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-background/10 backdrop-blur-sm border border-primary-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
-                <ZoomIn className="w-5 h-5 text-primary-foreground" />
-              </div>
-            </div>
-          ))}
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
+
+                    {/* Content */}
+                    <div className="absolute inset-0 p-6 flex flex-col justify-end text-primary-foreground opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
+                      <span className="text-xs font-medium text-amber mb-2">{image.category}</span>
+                      <h3 className="font-display font-semibold text-xl md:text-2xl mb-2">
+                        {image.title}
+                      </h3>
+                      <div className="w-12 h-1 bg-electric-blue"></div>
+                    </div>
+
+                    {/* Zoom icon */}
+                    <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-background/10 backdrop-blur-sm border border-primary-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
+                      <ZoomIn className="w-5 h-5 text-primary-foreground" />
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
 
         {/* Image Modal */}
