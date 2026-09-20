@@ -7,22 +7,21 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-surface-tile-1 text-white py-[80px] flex items-center justify-center min-h-[90vh]">
-      <div className="container mx-auto px-6 max-w-5xl text-center">
+    <section className="bg-surface-tile-1 text-white py-[80px] flex items-center justify-center min-h-[90vh] overflow-hidden">
+      <div className="container mx-auto px-4 max-w-5xl text-center break-words">
         {/* Main heading */}
-        <h1 className="font-display font-semibold text-display-xl tracking-tight mb-4">
+        <h1 className="font-display font-semibold text-5xl md:text-display-xl tracking-tight mb-6 leading-tight">
           Premium Granite.
-          <br />
-          Unmatched Quality.
+          <br className="hidden md:block" /> Unmatched Quality.
         </h1>
 
         {/* Subheading */}
-        <p className="font-display font-normal text-2xl text-white/80 max-w-2xl mx-auto mb-10 leading-snug">
+        <p className="font-display font-normal text-lg md:text-2xl text-white/80 max-w-2xl mx-auto mb-10 leading-snug px-4">
           India's fastest-growing exporter of world-class rough blocks. Delivering consistency and trust globally.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 w-full px-4">
           <Button
             size="lg"
             onClick={() => scrollToSection("gallery")}

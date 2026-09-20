@@ -11,12 +11,11 @@ const About = () => {
   return (
     <section id="about" className="py-[80px] bg-canvas relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-5xl">
-        {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="font-display font-semibold text-display-md text-ink mb-2">
             About AVM EXPORTS
           </h2>
-          <p className="font-display font-normal text-2xl text-ink/70">
+          <p className="font-display font-normal text-xl md:text-2xl text-ink/70">
             Established Excellence Since 2018.
           </p>
         </div>

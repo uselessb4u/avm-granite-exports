@@ -126,6 +126,7 @@ const Gallery = () => {
                 },
               },
               image: {
+                loading: "lazy",
                 style: {
                   borderRadius: "0px",
                   transition: "transform 0.5s ease",

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Search, ShoppingBag } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,11 +20,11 @@ const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black text-white/80 transition-all duration-300">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex items-center justify-between h-11 text-xs">
+          <div className="flex items-center justify-between h-16 text-sm">
             {/* Logo */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="font-display font-medium text-white/90 hover:text-white transition-colors flex items-center"
+              className="font-display font-medium text-white/90 hover:text-white transition-colors flex items-center text-base"
             >
               AVM EXPORTS
             </button>
@@ -42,17 +42,12 @@ const Navbar = () => {
               ))}
             </div>
 
-            <div className="hidden md:flex items-center gap-4">
-              <button className="hover:text-white transition-colors"><Search size={14} /></button>
-              <button className="hover:text-white transition-colors"><ShoppingBag size={14} /></button>
-            </div>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden text-white/80 hover:text-white"
             >
-              {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -75,7 +70,7 @@ const Navbar = () => {
         )}
       </nav>
       {/* Spacer to prevent content from hiding under fixed nav */}
-      <div className="h-11"></div>
+      <div className="h-16"></div>
     </>
   );
 };
