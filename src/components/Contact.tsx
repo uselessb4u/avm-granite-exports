@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send, MessageSquare } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -52,140 +52,116 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-32 bg-neutral-100 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-electric-blue/5 rounded-full blur-3xl"></div>
+    <section id="contact" className="py-[80px] bg-canvas relative overflow-hidden border-t border-hairline">
+      <div className="container mx-auto px-6 relative max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="font-display font-semibold text-display-md text-ink mb-2">
+            Let's Start a Conversation
+          </h2>
+          <p className="font-display font-normal text-[17px] text-ink/70 max-w-2xl mx-auto">
+            Ready to partner with India's leading granite exporter? We're here to help.
+          </p>
+        </div>
 
-      <div className="container mx-auto px-6 relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20 animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber/10 border border-amber/20 mb-6">
-              <MessageSquare className="w-4 h-4 text-amber" />
-              <span className="text-sm font-medium text-amber">Get In Touch</span>
-            </div>
-            <h2 className="font-display font-bold text-display-md text-foreground mb-6">
-              Let's Start a <span className="text-amber">Conversation</span>
-            </h2>
-            <div className="w-20 h-1 bg-amber mx-auto mb-6"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Ready to partner with India's leading granite exporter? We're here to help.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-5 gap-8">
-            {/* Contact Information Cards */}
-            <div className="lg:col-span-2 space-y-6 animate-fade-in">
-              {contactInfo.map((info, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-card rounded-2xl border border-border hover:border-electric-blue/30 transition-all duration-300 hover:shadow-elegant group"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-electric-blue/10 flex items-center justify-center flex-shrink-0 group-hover:bg-electric-blue/20 transition-colors">
-                      <info.icon className="w-6 h-6 text-electric-blue" />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-semibold text-foreground mb-1">{info.label}</h4>
-                      {info.link ? (
-                        <a href={info.link} className="text-electric-blue hover:underline">
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-muted-foreground">{info.value}</p>
-                      )}
-                      {info.subtext && (
-                        <p className="text-sm text-muted-foreground mt-1">{info.subtext}</p>
-                      )}
-                    </div>
+        <div className="grid lg:grid-cols-5 gap-8">
+          {/* Contact Information Cards */}
+          <div className="lg:col-span-2 space-y-6">
+            {contactInfo.map((info, index) => (
+              <div
+                key={index}
+                className="p-6 bg-canvas rounded-lg border border-hairline transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-canvas-parchment flex items-center justify-center flex-shrink-0">
+                    <info.icon className="w-5 h-5 text-ink" />
                   </div>
-                </div>
-              ))}
-
-              {/* Leadership Card */}
-              <div className="p-6 bg-gradient-to-br from-electric-blue to-electric-dark rounded-2xl text-primary-foreground relative overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yMSAxLjc5LTQgMy45OTgtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNHptMC0yMGMwLTIuMjEgMS43OS00IDMuOTk4LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6bS0yMCAwYzAtMi4yMSAxLjc5LTQgMy45OTgtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNHptMCAyMGMwLTIuMjEgMS43OS00IDMuOTk4LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
-                <div className="relative z-10">
-                  <h4 className="font-display font-semibold text-lg mb-2">
-                    Leadership
-                  </h4>
-                  <p className="text-primary-foreground/90">
-                    <span className="font-semibold">Mr. A. Asai Thambi</span>
-                    <br />
-                    Managing Partner
-                  </p>
+                  <div className="flex-1 pt-1">
+                    <h4 className="font-semibold text-ink mb-1">{info.label}</h4>
+                    {info.link ? (
+                      <a href={info.link} className="text-primary hover:underline text-[17px]">
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-ink text-[17px]">{info.value}</p>
+                    )}
+                    {info.subtext && (
+                      <p className="text-[14px] text-ink-muted-80 mt-1">{info.subtext}</p>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
+          </div>
 
-            {/* Contact Form */}
-            <div className="lg:col-span-3 animate-fade-in">
-              <form onSubmit={handleSubmit} className="space-y-6 bg-card p-8 md:p-10 rounded-3xl border border-border shadow-elegant">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Input
-                      type="text"
-                      name="name"
-                      placeholder="Your Name *"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="h-12 rounded-xl border-border focus:border-electric-blue"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email *"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="h-12 rounded-xl border-border focus:border-electric-blue"
-                    />
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <Input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="h-12 rounded-xl border-border focus:border-electric-blue"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="text"
-                      name="company"
-                      placeholder="Company Name"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="h-12 rounded-xl border-border focus:border-electric-blue"
-                    />
-                  </div>
-                </div>
+          {/* Contact Form */}
+          <div className="lg:col-span-3">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-canvas-parchment p-8 md:p-10 rounded-lg border border-hairline">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <Textarea
-                    name="message"
-                    placeholder="Your Message *"
-                    value={formData.message}
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name *"
+                    value={formData.name}
                     onChange={handleChange}
                     required
-                    rows={6}
-                    className="rounded-xl border-border focus:border-electric-blue resize-none"
+                    className="h-12 rounded-full border-hairline focus:border-primary-focus bg-canvas px-6"
                   />
                 </div>
+                <div>
+                  <Input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email *"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="h-12 rounded-full border-hairline focus:border-primary-focus bg-canvas px-6"
+                  />
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <Input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="h-12 rounded-full border-hairline focus:border-primary-focus bg-canvas px-6"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="text"
+                    name="company"
+                    placeholder="Company Name"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="h-12 rounded-full border-hairline focus:border-primary-focus bg-canvas px-6"
+                  />
+                </div>
+              </div>
+              <div>
+                <Textarea
+                  name="message"
+                  placeholder="Your Message *"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                  className="rounded-[24px] border-hairline focus:border-primary-focus bg-canvas px-6 py-4 resize-none"
+                />
+              </div>
+              <div className="flex justify-end">
                 <Button
                   type="submit"
-                  className="w-full h-14 bg-electric-blue hover:bg-electric-dark text-primary-foreground font-semibold text-lg rounded-full shadow-neon hover:shadow-glow transition-all duration-300 group"
+                  className="h-12 px-8 bg-primary hover:bg-primary-focus text-white font-normal text-[17px] rounded-full transition-transform active:scale-95 shadow-none border-0"
                 >
                   Send Message
-                  <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
